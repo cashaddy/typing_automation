@@ -1,0 +1,66 @@
+{
+	"keystrokes":{
+		"KEYSTROKE_ID": "MySQL key",
+		"PRESS_TIME": "time ($.now()) when keydown event was captured. See https://developer.mozilla.org/en-US/docs/Web/Events/keydown",
+		"RELEASE_TIME":"time ($.now()) when keyup event was captured. See https://developer.mozilla.org/en-US/docs/Web/Events/keyup",
+		"KEYCODE":"keyCode as in https://developer.mozilla.org/en-US/docs/Web/Events/keydown",
+		"LETTER":"Value from keycodes.js, corresponding to keyCode",
+		"TEST_SECTION_ID":"MySQL foreign key"
+	},
+	"log_data": {
+		"LOG_DATA_ID":"MySQL key",
+		"TYPE":"Type of the detected event",
+		"KEY":"https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key",
+		"CODE":"https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code",
+		"DATA":"https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data",
+		"INPUT":"Value of the text input field",
+		"PRESSED":"Key codes of simultaneously pressed buttons",
+		"TIMESTAMP":"time ($.now()) when the event was captured, should match keystrokes.PRESS_TIME for type=keydown and keystrokes.RELEASE_TIME for type=keyup.",
+		"SCREEN_ORIENTATION":"screen.orientation.angle or window.orientation (0 for portrait, 90 for landscape), or -1",
+		"DEVICE_ORIENTATION" : "(Data alpha, beta, gamma) from last Device orientation event (if available). See https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent",
+		"TEST_SECTION_ID":"MySQL foreign key"
+	},
+	"participants":{
+		"PARTICIPANT_ID":"MySQL key",
+		"IP_ADDRESS":"The client IP address, as in request.remoteAddress",
+		"BROWSER":"Browser string from request.headers.get('User-Agent'), as in navigator.userAgent. See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent",
+		"BROWSER_LANGUAGE":"Accepted languages from request.headers.get('Accept-Language'), as in navigator.language(s). See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language",
+		"DEVICE":"mobile or desktop, see https://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery",
+		"SCREEN_W":"Available screen width, see screen.availWidth",
+		"SCREEN_H":"Available screen heigth, see screen.availHeight",
+		"AGE":"What is your age? [0-120]",
+		"GENDER":"What is your gender? [none / male / female]",
+		"HAS_TAKEN_TYPING_COURSE":"Have you ever taken a typing course? [true / false]",
+		"LAYOUT":"Which keyboard layout do you use? [qwerty / qwertz / azerty / other]",
+		"WPM":"Wpm",
+		"ERROR_RATE":"Error rate",
+		"NATIVE_LANGUAGE":"What is your native language? [two-letter country code]",
+		"KEYBOARD_TYPE":"What kind of keyboard are you using? [mobile / tablet / laptop / desktop / add-on / other]",
+		"USING_APP":"Do you use a keyboard, installed from the app store? [true (kb name) / false / notsure]",
+		"USING_FEATURES":"Have you used any advanced features during the typing test? [swipe / prediction / autocorrection / other / no / notsure]",
+		"FINGERS":"Which hand did you use to type during the test? [left_hand / right_hand / both_hands] ; Which fingers did you use to type during the test? [thumbs / index_fingers / middle_fingers / other-nfingers / other] ; [n of other fingers] ; [other input method]",
+		"TIME_SPENT_TYPING":"On average, how many hours per day do you spend writing with your (device) keyboard? [0-24]",
+		"TYPE_ENGLISH":"How often do you type in English? (only for native != en) [always, ususlly, sometimes, rarely, never]",
+	},
+	"sentences":{
+		"SENTENCE_ID":"MySQL key",
+		"SENTENCE":"Stimuli sentence" ,
+		"SOURCE":"Source of stimuli [mobile / email / memorable / news]" 
+	},
+	"test_sections":{
+		"TEST_SECTION_ID":"MySQL key",
+		"PARTICIPANT_ID":"MySQL foreign key",
+		"SENTENCE_ID":"MySQL foreign key",
+		"USER_INPUT":"Submitted user input",
+		"INPUT_TIME":"(likely) time spent typing the input",
+		"INPUT_LENGTH":"(likely) number of characters in the input",
+		"ERROR_RATE":"(likely) error rate of the inpit string",
+		"EDIT_DISTANCE":"(likely) the difference between stimuli and input",
+		"WPM":"(likely) wpm for the input string",
+		"ERROR_LEN":"(not sure)",
+		"POTENTIAL_WPM":"(not sure)",
+		"POTENTIAL_LENGTH":"(not sure)",
+		"DEVICE":"Input device [desktop / mobile]"
+	}
+
+}
