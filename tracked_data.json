@@ -40,7 +40,7 @@
 		"USING_FEATURES":"Have you used any advanced features during the typing test? [swipe / prediction / autocorrection / other / no / notsure]",
 		"FINGERS":"Which hand did you use to type during the test? [left_hand / right_hand / both_hands] ; Which fingers did you use to type during the test? [thumbs / index_fingers / middle_fingers / other-nfingers / other] ; [n of other fingers] ; [other input method]",
 		"TIME_SPENT_TYPING":"On average, how many hours per day do you spend writing with your (device) keyboard? [0-24]",
-		"TYPE_ENGLISH":"How often do you type in English? (only for native != en) [always, ususlly, sometimes, rarely, never]",
+		"TYPE_ENGLISH":"How often do you type in English? (only for native != en) [always, ususlly, sometimes, rarely, never]"
 	},
 	"sentences":{
 		"SENTENCE_ID":"MySQL key",
