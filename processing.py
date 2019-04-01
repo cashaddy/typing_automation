@@ -60,8 +60,11 @@ def log_process(log):
     log.reset_index(drop=True, inplace=True)
     
     # Drop more unused columns
-    log.drop(['timestamp','log_data_id','input_len','input_len_prev','lev_dist_prev',],axis=1,inplace=True)
-    
+    log.drop(
+        ['timestamp','log_data_id','input_len','input_len_prev','lev_dist_prev'],
+        axis=1,
+        inplace=True
+    )
     return log
 
     
@@ -157,7 +160,6 @@ def get_lab_results():
         263374,
         263720,
         265900,
-        265924,
         267956,
         268067,
         268085
@@ -269,25 +271,28 @@ def infer_ite(log):
     mask = (log.key.str[0] == ' ') & (log.key.str.len() > 2)
     log.loc[mask,'ite'] = 'swype'
 
-    ## Case 2: The first action of any entry has multiple characters (excluding spaces) AND there are multiple actions
+    ## Case 2: The first action of an entry is multicharacter (excl. spaces) AND there's multiple actions
     index_first = log.groupby(['ts_id','entry_id']).head(1).index
     mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1)
     mask &= (log.entry_id == log.entry_id.shift(-1))
     log.loc[mask,'ite'] = 'swype'
 
-    ## Case 3: The first action of the very first entry has multiple characters (not including spaces)
+    ## Case 3: The first action of the very first entry has multiple characters (excluding spaces)
     index_first = log.groupby(['ts_id']).head(1).index
     mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1)
     log.loc[mask,'ite'] = 'swype'
 
-    ## Case 3: The first action of a new word has multiple characters (not including spaces) AND it's slow
-    index_first = log.loc[log.text_field.shift(1).str[-1] == ' '].groupby(['ts_id','entry_id']).head(1).index
+    ## Case 3: The first action of a new word has multiple characters (excluding spaces) AND it's slow
+    mask = log.text_field.shift(1).str[-1] == ' '
+    index_first = log.loc[mask].groupby(['ts_id','entry_id']).head(1).index
     mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1) & (log.iki_norm > 100)
     log.loc[mask,'ite'] = 'swype'
 
-    ## Case 4: The first action of a new word has multiple characters (not including spaces) AND it's long
-    index_first = log.loc[log.text_field.shift(1).str[-1] == ' '].groupby(['ts_id','entry_id']).head(1).index
-    mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1) & (log.key.str.len() > 4)
+    ## Case 4: The first action of a new word has multiple characters (excluding spaces) AND it's long
+    mask = log.text_field.shift(1).str[-1] == ''
+    index_first = log.loc[mask].groupby(['ts_id','entry_id']).head(1).index
+    mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1)
+    mask &= (log.key.str.len() > 4)
     log.loc[mask,'ite'] = 'swype'
 
     ## Case 5: Fill in the same entry as a swype
@@ -311,7 +316,8 @@ def infer_ite(log):
 
     # Case 1: The last action of an entry has multiple characters AND there are multiple actions AND fast
     index_last = log.groupby(['ts_id','entry_id']).tail(1).index
-    mask = (log.index.isin(index_last)) & (log.key.str.len() > 1) & (log.entry_id == log.entry_id.shift(1))
+    mask = (log.index.isin(index_last)) & (log.key.str.len() > 1)
+    mask &= (log.entry_id == log.entry_id.shift(1))
     mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 300)
     log.loc[mask,'ite'] = 'autocorr'
 
