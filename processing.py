@@ -115,12 +115,8 @@ def log_validate(log):
     ## Case 3: Characters added to the end of the sentence
     def find_key(x):
         # Check that the end of the sentence is what was added to (not the middle of the sentence)
-        try:
-            if x.text_field[:-x.lev_dist] == x.text_field_prev:
-                return x.text_field[-x.lev_dist:]
-        except:
-            print(x)
-            raise
+        if x.text_field[:-x.lev_dist] == x.text_field_prev:
+            return x.text_field[-x.lev_dist:]
         else:
             return 'undefined'
     log['text_field_prev'] = log.text_field.shift(1)
@@ -175,10 +171,10 @@ def get_lab_results():
     lab_log = pd.concat(logs)
 
     lab_log = log_process(lab_log)
-
-    lab_log['participant_id'] = lab_log.ts_id.map(
-        dict(zip(lab_ts[0],lab_ts[2]))
-    )
+    
+    lab_log = pd.merge(lab_log,ts[[0,2]],left_on=['ts_id'],right_on=[0])
+    lab_log.drop(0,axis=1,inplace=True)
+    lab_log.rename(columns={2:'participant_id'},inplace=True)
     
     return lab_log
     
@@ -314,12 +310,12 @@ def infer_ite(log):
 
     # 3. Infer Autocorrect
 
-    # Case 1: The last action of an entry has multiple characters AND there are multiple actions AND fast
-    index_last = log.groupby(['ts_id','entry_id']).tail(1).index
-    mask = (log.index.isin(index_last)) & (log.key.str.len() > 1)
-    mask &= (log.entry_id == log.entry_id.shift(1))
-    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 300)
-    log.loc[mask,'ite'] = 'autocorr'
+#     # Case 1: The last action of an entry has multiple characters AND there are multiple actions AND fast
+#     index_last = log.groupby(['ts_id','entry_id']).tail(1).index
+#     mask = (log.index.isin(index_last)) & (log.key.str.len() > 1)
+#     mask &= (log.entry_id == log.entry_id.shift(1))
+#     mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 300)
+#     log.loc[mask,'ite'] = 'autocorr'
 
     # Reset negative entries
     log.loc[log.entry_id < 0,'ite'] = 'none'
