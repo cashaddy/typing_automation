@@ -34,6 +34,10 @@ def get_log(start,nrows):
 
 
 def log_process(log):
+    # Sort by timestamp
+    log.sort_values(['ts_id','timestamp','log_data_id'],inplace=True)
+    log.reset_index(drop=True, inplace=True)
+    
     # Remove nulls, cast to correct type
     log = log_preprocess(log)
     
@@ -42,11 +46,7 @@ def log_process(log):
     log['iki'] = calculate_iki(log)
     
     # Fill in keys, remove junk rows
-    log = log_validate(log)
-    
-    # Sort by timestamp
-    log.sort_values(['ts_id','timestamp','log_data_id'],inplace=True)
-    log.reset_index(drop=True, inplace=True)    
+    log = log_validate(log)    
     
     # Decode ite
     log['ite'] = log[['swype','predict','autocorr']].idxmax(axis=1)
