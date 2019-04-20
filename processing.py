@@ -145,7 +145,6 @@ def log_validate(log):
     
     return log
 
-
 def get_lab_results():
     ts = get_test_sections()
 
@@ -177,6 +176,15 @@ def get_lab_results():
     lab_log.rename(columns={2:'participant_id'},inplace=True)
     
     return lab_log
+
+def get_participants_for_log(log):
+    ts = get_test_sections()
+    
+    log = pd.merge(log,ts[[0,2]],left_on=['ts_id'],right_on=[0])
+    log.drop(0,axis=1,inplace=True)
+    log.rename(columns={2:'participant_id'},inplace=True)
+    
+    return log
     
 def calculate_iki(log):
     return log.groupby('ts_id').timestamp.diff()
@@ -221,6 +229,8 @@ def get_header(table):
 
 
 def mark_entries(log):
+    log = log.copy()
+    
     # 1. Mark forward entries
     log['is_forward'] = False
 
