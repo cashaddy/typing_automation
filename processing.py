@@ -285,7 +285,7 @@ def infer_ite(log):
     log.loc[mask,'ite'] = 'swype'
 
     ## Case 4: The first action of a new word has multiple characters (excluding spaces) AND it's long
-    mask = log.text_field.shift(1).str[-1] == ''
+    mask = log.text_field.shift(1).str[-1] == ' '
     index_first = log.loc[mask].groupby(['ts_id','entry_id']).head(1).index
     mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1)
     mask &= (log.key.str.len() > 4)
