@@ -8,7 +8,7 @@ def get_log(start,nrows):
     else:
         log = pd.read_csv('./data/log_data_ready.csv',
                         nrows=nrows,
-                        usecols = [0,1,5,6,8] + list(range(11,18)),
+                        usecols = [1,5,6,8,11,12,15,16,17],
                         header=None,
                         skiprows=start,
                         encoding = "ISO-8859-1",
@@ -16,15 +16,12 @@ def get_log(start,nrows):
     
     # Set header
     log.columns = [
-        'log_data_id',
         'ts_id',
         'key',
         'text_field',
         'timestamp',
         'input_len',
         'lev_dist',
-        'input_len_prev',
-        'lev_dist_prev',
         'swype',
         'predict',
         'autocorr'
@@ -35,7 +32,7 @@ def get_log(start,nrows):
 
 def log_process(log):
     # Sort by timestamp
-    log.sort_values(['ts_id','timestamp','log_data_id'],inplace=True)
+    log.sort_values(['ts_id','timestamp'],inplace=True)
     log.reset_index(drop=True, inplace=True)
     
     # Remove nulls, cast to correct type
@@ -61,7 +58,7 @@ def log_process(log):
     
     # Drop more unused columns
     log.drop(
-        ['timestamp','log_data_id','input_len','input_len_prev','lev_dist_prev'],
+        ['timestamp','input_len'],
         axis=1,
         inplace=True
     )
@@ -80,15 +77,12 @@ def log_preprocess(log):
     
     # Cast to correct type
     dtypes = {
-        'log_data_id':      'int64',
         'ts_id':            'int64',
         'key':              'object',
         'text_field':       'object',
         'timestamp':        'int64',
         'input_len':        'uint8',
         'lev_dist':         'uint8',
-        'input_len_prev':   'uint8',
-        'lev_dist_prev':    'uint8',
         'swype':            'bool',
         'predict':          'bool',
         'autocorr':         'bool',
