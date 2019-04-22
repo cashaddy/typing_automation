@@ -1,5 +1,14 @@
 # README
 
+## Data processing
+1. Download data from Kseniia
+1. Rename the tables by running *rename_tables.sql*
+1. Mark invalid test sections by running *mark_invalid.sql*
+1. Get a sample of participants by running *sample.sql*
+1. Export log_sample to csv (tab delimiter)
+1. Clean the csv of the sample by running *sample_clean.py*
+
+
 ## Roadmap
 ### ITE detection
 1. Use consistent key inference for all test sections. Currently the ones that are undefined are inferred while the ones that are already defined are not inferred. If we infer the key for everything, we can sidestep some of the awkward key input we currently see (e.g. one letter input is registered as a continuous key).
