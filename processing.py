@@ -313,13 +313,13 @@ def infer_ite(log):
     log.loc[mask,'ite'] = 'predict'
 
     # 3. Infer Autocorrect
-
-#     # Case 1: The last action of an entry has multiple characters AND there are multiple actions AND fast
-#     index_last = log.groupby(['ts_id','entry_id']).tail(1).index
-#     mask = (log.index.isin(index_last)) & (log.key.str.len() > 1)
-#     mask &= (log.entry_id == log.entry_id.shift(1))
-#     mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 300)
-#     log.loc[mask,'ite'] = 'autocorr'
+    
+    ## Case 1: The last action of an entry has multiple characters AND there are multiple entries AND is fast
+    index_last = log.groupby(['ts_id','entry_id']).tail(1).index
+    mask = (log.index.isin(index_last)) & (log.key.str.len() > 1)
+    mask &= (log.entry_id == log.entry_id.shift(1))
+    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 400)
+    log.loc[mask,'ite'] = 'autocorr'
 
     # Reset negative entries
     log.loc[log.entry_id < 0,'ite'] = 'none'
