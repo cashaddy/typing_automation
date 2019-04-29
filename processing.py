@@ -210,10 +210,7 @@ def get_test_sections():
 
 
 def get_participants():
-    return pd.read_csv('./data/participants_mod.csv',
-                       index_col=0,
-                       encoding = "ISO-8859-1",
-                       sep=',')
+    return pd.read_csv('./data/participants.csv', sep='\t')
 
 def get_header(table):
     with open('./tracked_data.json','r') as f:

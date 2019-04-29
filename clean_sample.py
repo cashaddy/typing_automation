@@ -18,4 +18,5 @@ log.columns = [
 
 print('Updating file...')
 log.to_csv('./data/log_sample.csv',index=False)
+print('DONE')
       
