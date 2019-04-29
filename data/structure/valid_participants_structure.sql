@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `valid_participants`;
 CREATE TABLE `valid_participants` (
   `PARTICIPANT_ID` int(11) NOT NULL AUTO_INCREMENT,
   `IP_ADDRESS` varchar(32) DEFAULT NULL,
-  `BROWSER` text,
+  `USER_AGENT` text,
   `BROWSER_LANGUAGE` varchar(255) DEFAULT NULL,
   `DEVICE` varchar(16) DEFAULT NULL,
   `SCREEN_W` int(11) DEFAULT NULL,
