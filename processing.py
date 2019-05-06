@@ -31,6 +31,7 @@ def get_log(start,nrows):
 
 
 def log_process(log):
+    log = log.copy()
     # Sort by timestamp
     log.sort_values(['ts_id','timestamp'],inplace=True)
     log.reset_index(drop=True, inplace=True)
@@ -219,6 +220,7 @@ def mark_entries(log):
     log = log.copy()
     
     # 1. Mark forward entries
+    ## Default
     log['is_forward'] = False
 
     ## Case 1: Zero LD. We assume this is always forward.
@@ -230,19 +232,28 @@ def mark_entries(log):
     log.loc[first_key.index,'is_forward'] = True
     
     ## Case 3: LD > 0. Only if the LD is accounted for by characters added at the end of a sentence.
-    mask = (log.key != 'undefined') & (log.lev_dist > 0)
+    '''
+    We are currently using the length of the key. Another way to do this is to look at the lev_dist (i.e. check that
+    the text field minus [LD amount of characters] is equal to the previous text field). However, this is flawed
+    since it would result in corrective inputs (e.g. giulty --> guilty) not being recognized as forward entries.
+    '''
+    mask = (log.key != 'undefined') & (log.lev_dist > 0) & (~log.is_forward)
     log.loc[mask,'is_forward'] = log.loc[mask].apply(lambda x: x.text_field[-len(x.key):] == x.key, axis=1)
+    
+    ## Case 4: Backspace at the current word. Double check that the difference is the character at the end of the text field
+    mask = log.key == '_'
+    mask &= (log.text_field == log.text_field_prev.str[:-1])
+    log.loc[mask,'is_forward'] = True
 
     # 2. Define entries
-
-    ## Assign entry id based on the number of separators
-    log['contains_sep'] = log.key.str.contains(' |_') # Dummy
-    log['entry_id'] = log.groupby('ts_id').contains_sep.cumsum()
-    log.drop('contains_sep',axis=1,inplace=True) # Remove dummy
+    ## Assign entry id based on the number of spaces and non-forward backspaces
+    log['entry_id'] = log.text_field.str.findall(' ').apply(len)
+    # Multi-character keys ending in a space actually belong to the previous entry
+    log.loc[(log.key.str[-1] == ' ') & (log.key.str.len() > 1),'entry_id'] -= 1
 
     ## Negative entries for separators
     log.loc[(log.key == ' '),'entry_id'] = -1
-    log.loc[(log.key == '_'),'entry_id'] = -2
+    log.loc[(log.key == '_') & (~log.is_forward),'entry_id'] = -2
     log.loc[~log.is_forward,'entry_id'] = -3
 
 
@@ -300,16 +311,14 @@ def infer_ite(log):
     # 2. Infer Prediction
 
     ## Case 1: The last action of an entry has multiple characters AND is slow
-    index_last = log.groupby(['ts_id','entry_id']).tail(1).index
-    mask = (log.index.isin(index_last)) & (log.key.str.len() > 1)
+    mask = (log.key.str.len() > 1)
     mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki > 500)
     log.loc[mask,'ite'] = 'predict'
 
     # 3. Infer Autocorrect
     
     ## Case 1: The last action of an entry has multiple characters AND there are multiple entries AND is fast
-    index_last = log.groupby(['ts_id','entry_id']).tail(1).index
-    mask = (log.index.isin(index_last)) & (log.key.str.len() > 1)
+    mask = (log.key.str.len() > 1)
     mask &= (log.entry_id == log.entry_id.shift(1))
     mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 400)
     log.loc[mask,'ite'] = 'autocorr'
