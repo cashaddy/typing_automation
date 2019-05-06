@@ -174,9 +174,9 @@ def get_lab_results():
 def get_participants_for_log(log):
     ts = get_test_sections()
     
-    log = pd.merge(log,ts[[0,2]],left_on=['ts_id'],right_on=[0])
-    log.drop(0,axis=1,inplace=True)
-    log.rename(columns={2:'participant_id'},inplace=True)
+    log = pd.merge(log,ts[['TEST_SECTION_ID','PARTICIPANT_ID']],left_on='ts_id',right_on='TEST_SECTION_ID')
+    log.drop('TEST_SECTION_ID',axis=1,inplace=True)
+    log.rename(columns={'PARTICIPANT_ID':'participant_id'},inplace=True)
     
     return log
     
@@ -203,11 +203,7 @@ def describe_ite(log):
 
 
 def get_test_sections():
-    return pd.read_csv('./data/test_sections_ready.csv',
-                    header=None,
-                    encoding = "ISO-8859-1",
-                    sep='\t')
-
+    return pd.read_csv('./data/test_sections.csv',sep='\t')
 
 def get_participants():
     return pd.read_csv('./data/participants.csv', sep='\t')
