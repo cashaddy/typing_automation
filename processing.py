@@ -75,6 +75,8 @@ def log_preprocess(log):
     
     # Replace backspaces
     log.loc[log.key.isna(),'key'] = '_'
+    # Replace null text field (means empty field)
+    log.loc[log.text_field.isnull(),'text_field'] = ''
     
     # Cast to correct type
     dtypes = {
