@@ -1,6 +1,18 @@
 import pandas as pd
 import json
 
+def get_word_frequency():
+    # https://www.wordfrequency.info/free.asp
+    word_freq = pd.read_csv('./word_frequency.csv',sep='\t')
+    # Remove random white spaces
+    word_freq.Word = word_freq.Word.str.strip()
+    # Set as lower case
+    word_freq.Word = word_freq.Word.str.lower()
+    # Words sometimes appear twice, get the most frequent one
+    word_freq.drop_duplicates('Word',keep='first',inplace=True)
+    
+    return word_freq
+
 def get_log(start,nrows):
     if nrows > 2000000:
         raise Exception('Too large')
@@ -211,12 +223,6 @@ def get_test_sections():
 def get_participants():
     return pd.read_csv('./data/participants.csv', sep='\t')
 
-def get_header(table):
-    with open('./tracked_data.json','r') as f:
-        headers = json.load(f)
-       
-    return headers[table]
-
 
 def mark_entries(log):
     log = log.copy()
@@ -291,14 +297,14 @@ def infer_ite(log):
     ## Case 3: The first action of a new word has multiple characters (excluding spaces) AND it's slow
     mask = log.text_field.shift(1).str[-1] == ' '
     index_first = log.loc[mask].groupby(['ts_id','entry_id']).head(1).index
-    mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1) & (log.iki_norm > 100)
+    mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1) & (log.iki_norm > 150)
     log.loc[mask,'ite'] = 'swype'
 
     ## Case 4: The first action of a new word has multiple characters (excluding spaces) AND it's long
     mask = log.text_field.shift(1).str[-1] == ' '
     index_first = log.loc[mask].groupby(['ts_id','entry_id']).head(1).index
     mask = (log.index.isin(index_first)) & (log.key.str.strip(' ').str.len() > 1)
-    mask &= (log.key.str.len() > 4)
+    mask &= (log.key.str.len() > 5)
     log.loc[mask,'ite'] = 'swype'
 
     ## Case 5: Fill in the same entry as a swype
@@ -318,6 +324,32 @@ def infer_ite(log):
     log.loc[mask,'ite'] = 'predict'
 
     # 3. Infer Autocorrect
+    
+    ## Case 1: The last action of an entry has multiple characters AND there are multiple entries AND is fast
+    mask = (log.key.str.len() > 1)
+    mask &= (log.entry_id == log.entry_id.shift(1))
+    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 400)
+    log.loc[mask,'ite'] = 'autocorr'
+
+    # Reset negative entries
+    log.loc[log.entry_id < 0,'ite'] = 'none'
+
+    return log
+
+def infer_ite_no_swype(log):
+    log = log.copy()
+
+    # Assume no ite by default
+    log['ite'] = 'none'
+
+    # 1. Infer Prediction
+
+    ## Case 1: The last action of an entry has multiple characters AND is slow
+    mask = (log.key.str.len() > 1)
+    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki > 500)
+    log.loc[mask,'ite'] = 'predict'
+
+    # 2. Infer Autocorrect
     
     ## Case 1: The last action of an entry has multiple characters AND there are multiple entries AND is fast
     mask = (log.key.str.len() > 1)
