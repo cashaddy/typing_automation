@@ -66,7 +66,7 @@ def log_process(log):
     log.drop(['swype','predict','autocorr'],axis=1,inplace=True)
     
     # Remove punctuation
-    log = log.loc[~log.key.str.contains('\.|,|\?')].copy()
+    log = log.loc[~log.key.str.contains('\.|,|\?|\!')].copy()
     log.reset_index(drop=True, inplace=True)
     
     # Drop more unused columns
@@ -87,8 +87,15 @@ def log_preprocess(log):
     
     # Replace backspaces
     log.loc[log.key.isna(),'key'] = '_'
+    
     # Replace null text field (means empty field)
     log.loc[log.text_field.isnull(),'text_field'] = ''
+    
+    # Replace bad apostrophes
+    log.key  = log.key.str.replace("`","'")
+    log.key  = log.key.str.replace("’","'")
+    log.text_field  = log.text_field.str.replace("`","'")
+    log.text_field  = log.text_field.str.replace("’","'")
     
     # Cast to correct type
     dtypes = {
@@ -250,7 +257,7 @@ def mark_entries(log):
     
     ## Case 4: Backspace at the current word. Double check that the difference is the character at the end of the text field
     mask = log.key == '_'
-    mask &= (log.text_field == log.text_field_prev.str[:-1])
+    mask &= (log.text_field.str.strip() == log.text_field_prev.str.strip().str[:-1])
     log.loc[mask,'is_forward'] = True
 
     # 2. Define entries
@@ -271,8 +278,59 @@ def mark_entries(log):
     return log
 
 
-def infer_ite(log):
+def filter_log(log):
+    # Remove all non-forward entries
+    log = log.loc[log.is_forward].copy()
+
+    # Remove participants with the cumulative multichar behaviour
+    # Action of an entry is single letter AND following two actions in the entry have increasing # of chars
+    mask = log.key.str.len() == 1
+    mask &= log.key.shift(-1).str.len() == 2
+    mask &= log.key.shift(-2).str.len() == 3
+    mask &= log.entry_id.shift(-1) == log.entry_id
+    mask &= log.entry_id.shift(-2) == log.entry_id.shift(-1)
+
+    participants_invalid = log.loc[mask].participant_id.unique()
+    log = log.loc[~log.participant_id.isin(participants_invalid)]
+
+    # Remove participants who use swipe
+    participants_ = processing.get_participants().set_index('PARTICIPANT_ID')
+    participants_ = participants_.loc[log.participant_id.unique()].copy()
+    participants_swipe = participants_.loc[participants_.USING_FEATURES.str.contains('swipe')].index
+    log = log.loc[~log.participant_id.isin(participants_swipe)].copy()
+    participants_ = participants_.loc[log.participant_id.unique()].copy()
+
+    # Remove heavy swype users that managed to get past the earlier swipe filtering stage
+    log = processing.infer_ite_swype(log)
+    # Remove users where swipe was detected more than 10 percent of the time 
+    participants_swipe = log.groupby('participant_id').ite.value_counts(
+        normalize=True
+    ).unstack()['swype'].sort_values(ascending=False)
+    participants_swipe = participants_swipe.loc[participants_swipe >= 0.1].index
+    log = log.loc[~log.participant_id.isin(participants_swipe)].copy()
+
+    # Remove participants where every entry before a space is a multichar
+    # Entry is multicharacter AND is followed by a space AND is zero LD
+    mask = log.key.str.strip(' ').str.len() > 1
+    mask &= log.key.shift(-1) == ' '
+    mask &= log.lev_dist == 0
+    log['tmp'] = mask
+    # Find participants who have a large percentage of these 0-LD, multichar entries
+    participants_multichar = log.groupby('participant_id').tmp.value_counts().unstack()[True].fillna(0)
+    participants_multichar /= log.groupby(['participant_id','ts_id']).entry_id.nunique().sum(level=0)
+    participants_multichar = participants_multichar.loc[participants_multichar > 0.2].index
+    # Remove them
+    log = log.loc[~log.participant_id.isin(participants_multichar)].copy()
+
+    # Remove non-native speakers
+    participants_nonnative = participants_.loc[participants_.NATIVE_LANGUAGE != 'en'].index
+    log = log.loc[~log.participant_id.isin(participants_nonnative)].copy()
+
+
+def infer_ite_swype(log):
     log = log.copy()
+    
+    log['iki_norm'] = log.iki / log.key.str.len()
 
     # Assume no ite by default
     log['ite'] = 'none'
@@ -316,24 +374,6 @@ def infer_ite(log):
     # TODO what about swype followed by a prediction correction?
     # TODO what about backspace followed by a prediction?
 
-    # 2. Infer Prediction
-
-    ## Case 1: The last action of an entry has multiple characters AND is slow
-    mask = (log.key.str.len() > 1)
-    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki > 500)
-    log.loc[mask,'ite'] = 'predict'
-
-    # 3. Infer Autocorrect
-    
-    ## Case 1: The last action of an entry has multiple characters AND there are multiple entries AND is fast
-    mask = (log.key.str.len() > 1)
-    mask &= (log.entry_id == log.entry_id.shift(1))
-    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 400)
-    log.loc[mask,'ite'] = 'autocorr'
-
-    # Reset negative entries
-    log.loc[log.entry_id < 0,'ite'] = 'none'
-
     return log
 
 def infer_ite_no_swype(log):
@@ -344,20 +384,73 @@ def infer_ite_no_swype(log):
 
     # 1. Infer Prediction
 
-    ## Case 1: The last action of an entry has multiple characters AND is slow
+    ## Case 1: The action of an entry has multiple characters AND is slow
     mask = (log.key.str.len() > 1)
-    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki > 500)
+    mask &= (log.lev_dist >= 0) & (log.iki > 500)
     log.loc[mask,'ite'] = 'predict'
 
     # 2. Infer Autocorrect
     
-    ## Case 1: The last action of an entry has multiple characters AND there are multiple entries AND is fast
+    ## Case 1: The action of an entry has multiple characters AND there are multiple entries AND is fast
     mask = (log.key.str.len() > 1)
     mask &= (log.entry_id == log.entry_id.shift(1))
-    mask &= (log.lev_dist > 0) & (log.ite != 'swype') & (log.iki < 400)
+    mask &= (log.lev_dist > 0) & (log.iki < 400)
     log.loc[mask,'ite'] = 'autocorr'
 
     # Reset negative entries
     log.loc[log.entry_id < 0,'ite'] = 'none'
 
+    return log
+
+def infer_sub_strategy(log):
+    log = log.copy()
+    
+    # Default null
+    log['ite2'] = None
+    # Default for predict is none
+    log.loc[log.ite == 'predict','ite2'] = 'none'
+
+    # Prediction: The ITE action is the only action in the entry AND is new word
+    mask = log.ite == 'predict'
+    mask &= log.entry_id != log.entry_id.shift(-1)
+    mask &= log.entry_id != log.entry_id.shift(1)
+    mask &= log.text_field.shift(1).str[-1] == ' '
+    log.loc[mask,'ite2'] = 'prediction'
+
+    # Correction: Not pure forward motion AND mutliple actions in the entry
+    mask = log.ite == 'predict'
+    mask &= log.len_diff != log.lev_dist
+    mask &= log.entry_id == log.entry_id.shift(1)
+    log.loc[mask,'ite2'] = 'correction'
+
+    # Fixup: Preceded by backspace AND not a new word
+    mask = log.ite == 'predict'
+    mask &= log.key.shift(1) == '_'
+    mask &= log.entry_id.shift(1) == log.entry_id
+    mask &= log.text_field.shift(1).str[-1] != ' '
+    log.loc[mask,'ite2'] = 'fixup'
+
+    # No-change prediction: multiple actions, LD is 0, len_diff is 0, 
+    mask = log.ite == 'predict'
+    mask &= log.len_diff == 0
+    mask &= log.lev_dist == 0
+    mask &= log.entry_id == log.entry_id.shift(1)
+    log.loc[mask,'ite2'] = 'no_change'
+
+    # Completion: Pure forward motion AND mutliple actions in the entry AND there is a change
+    mask = log.ite == 'predict'
+    mask &= log.len_diff == log.lev_dist
+    mask &= log.lev_dist > 0
+    mask &= log.entry_id == log.entry_id.shift(1)
+    log.loc[mask,'ite2'] = 'completion'
+    '''
+    Edge case: It's quite common for correction to cause len_diff of 1. So double check that the last letter
+    changes between the inputs. We also check against double letters, since this could still be a completion.
+    '''
+    mask = log.ite2 == 'completion'
+    mask &= log.len_diff == 1
+    mask &= log.text_field.str[-1] == log.text_field_prev.str[-1]
+    mask &= log.text_field.str[-1] != log.text_field.str[-2]
+    log.loc[mask,'ite2'] = 'correction'
+    
     return log
