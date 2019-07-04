@@ -6,7 +6,7 @@
 1. Mark invalid test sections by running *mark_invalid.sql*
 1. Get a sample of participants by running *sample.sql*
 1. Export log_sample to csv (tab delimiter)
-1. Clean the csv of the sample by running *sample_clean.py*
+1. Clean the csv of the sample by running *clean_sample.py*
 1. Export participants to csv (tab delimiter)
 1. Parse the user agent of the participants of the participants by running *parse_user_agent.py*
 
