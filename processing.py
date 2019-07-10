@@ -301,8 +301,8 @@ def filter_log(log):
     participants_ = participants_.loc[log.participant_id.unique()].copy()
 
     # Remove heavy swype users that managed to get past the earlier swipe filtering stage
+    # We do this by detect users where swipe was used more than 10 percent of the time 
     log = processing.infer_ite_swype(log)
-    # Remove users where swipe was detected more than 10 percent of the time 
     participants_swipe = log.groupby('participant_id').ite.value_counts(
         normalize=True
     ).unstack()['swype'].sort_values(ascending=False)
