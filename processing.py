@@ -263,12 +263,11 @@ def filter_log(log):
     mask &= log.key.shift(-2).str.len() == 3
     mask &= log.entry_id.shift(-1) == log.entry_id
     mask &= log.entry_id.shift(-2) == log.entry_id.shift(-1)
-
     participants_invalid = log.loc[mask].participant_id.unique()
     log = log.loc[~log.participant_id.isin(participants_invalid)]
 
     # Remove participants who use swipe
-    participants_ = processing.get_participants().set_index('PARTICIPANT_ID')
+    participants_ = get_participants().set_index('PARTICIPANT_ID')
     participants_ = participants_.loc[log.participant_id.unique()].copy()
     participants_swipe = participants_.loc[participants_.USING_FEATURES.str.contains('swipe')].index
     log = log.loc[~log.participant_id.isin(participants_swipe)].copy()
@@ -276,7 +275,7 @@ def filter_log(log):
 
     # Remove heavy swype users that managed to get past the earlier swipe filtering stage
     # We do this by detect users where swipe was used more than 10 percent of the time 
-    log = processing.infer_ite_swype(log)
+    log = infer_ite_swype(log)
     participants_swipe = log.groupby('participant_id').ite.value_counts(
         normalize=True
     ).unstack()['swype'].sort_values(ascending=False)
@@ -299,6 +298,8 @@ def filter_log(log):
     # Remove non-native speakers
     participants_nonnative = participants_.loc[participants_.NATIVE_LANGUAGE != 'en'].index
     log = log.loc[~log.participant_id.isin(participants_nonnative)].copy()
+    
+    return log
 
 
 def infer_ite_swype(log):
@@ -381,8 +382,8 @@ def infer_sub_strategy(log):
     
     # Default null
     log['ite2'] = None
-    # Default for predict is none
-    log.loc[log.ite == 'predict','ite2'] = 'none'
+    # Default for predict is 'other'
+    log.loc[log.ite == 'predict','ite2'] = 'other'
 
     # Prediction: The ITE action is the only action in the entry AND is new word
     mask = log.ite == 'predict'
