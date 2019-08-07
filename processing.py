@@ -429,3 +429,113 @@ def infer_sub_strategy(log):
     log.loc[mask,'ite2'] = 'correction'
     
     return log
+
+
+def log_to_words(log):
+    # All valid keystrokes
+    groupby = log.loc[log.entry_id >= 0].groupby([
+        'participant_id',
+        'ts_id',
+        'entry_id'
+    ])
+
+    words = groupby.last().text_field.str.split(' ').str[-1]
+    words = words.to_frame('word')
+    # For keys ending with a space, look two spaces back instead of one 
+    mask = groupby.last().key.str[-1] == ' '
+    words.loc[mask,'word'] = groupby.last().loc[mask].text_field.str.split(' ').str[-2]
+
+    words['word_length'] = words.word.str.len()
+
+    # Time per keystroke
+    groupby = log.groupby([
+        'participant_id',
+        'ts_id',
+        'entry_id'
+    ])
+    words['iki_norm'] = groupby.iki.sum()
+    words.iki_norm /= words.word_length
+
+    # Only letter keystrokes
+    mask = (log.len_diff == 1) & (log.is_forward)
+    mask &= (log.key.str.contains('[a-z]')) & (log.key.shift(1).str.contains('[a-z]'))
+    groupby = log.loc[mask].groupby([
+        'participant_id',
+        'ts_id',
+        'entry_id'
+    ])
+    words['iki_natural'] = groupby.iki.mean()
+
+
+    # Only ite keystrokes
+    groupby = log.loc[(log.entry_id >= 0) & (log.ite != 'none')].groupby([
+        'participant_id',
+        'ts_id',
+        'entry_id'
+    ])
+
+    words['ite'] = groupby.last().ite
+    words.ite.fillna('none',inplace=True)
+
+    words['ite2'] = groupby.last().ite2
+
+    words['ite_input'] = groupby.last().text_field.str.split().str[-1]
+    words['ite_input_key'] = groupby.last().key
+    words['ite_input_len'] = words.ite_input.str.len()
+
+    words['ite_input_prev'] = groupby.last().text_field_prev.str.split().str[-1]
+    words.loc[(words.ite != 'none') & (words.ite_input_prev.isna()),'ite_input_prev'] = '' # Replace prev text with empty string  
+    words['ite_lev_dist'] = groupby.last().lev_dist
+
+    words['ite_len_diff'] = groupby.last().len_diff
+
+    words['ite_iki'] = groupby.last().iki
+
+    groupby = log.loc[(log.entry_id >= 0) & (log.key == '_')].groupby([
+        'participant_id',
+        'ts_id',
+        'entry_id'
+    ])
+    words['n_backspace'] = groupby.size()
+    words.n_backspace = words.n_backspace.fillna(0)
+
+    words.reset_index(inplace=True)
+    words = words.loc[words.word.notna()].copy()
+    words = words.loc[words.word != ''].copy()
+    
+    return words
+
+def process_words(words):
+    words = words.copy()
+    words['type'] = None
+
+    # Get the type of word
+    # First letter is capital AND not the first word in the sentence AND not "I"
+    mask = (words.word.str.contains("[A-Z]")) & (words.entry_id != 0) & (words.word != 'I')
+    words.loc[mask,'type'] = 'proper'
+
+    # Contains an apostrophe
+    mask = (words.word.str.contains("'"))
+    words.loc[mask,'type'] = 'contraction'
+
+    # The rest are normal words
+    words.loc[words.type.isna(),'type'] = 'generic'
+    
+    
+    # Get the frequency of the word
+    ## https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Contemporary_fiction
+    word_freq = pd.read_csv('./data/word_frequency_2.csv')
+    word_freq.word = word_freq.word.str.lower()
+
+    freq_map = word_freq.set_index('word').frequency
+    words['freq'] = words.word.str.lower().map(freq_map)
+    words['freq_category'] = None
+
+    words.loc[(words.freq < 100000) & (words.freq > 0),'freq_category'] = 'common'
+    words.loc[(words.freq > 100000),'freq_category'] = 'very_common'
+
+    ## The rest are uncommon
+    mask = (words.freq_category.isna())
+    words.loc[mask,'freq_category'] = 'uncommon'
+    
+    return words
