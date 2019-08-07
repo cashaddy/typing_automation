@@ -1,44 +1,18 @@
 import pandas as pd
 import json
 
-def get_word_frequency():
-    # https://www.wordfrequency.info/free.asp
-    word_freq = pd.read_csv('./word_frequency.csv',sep='\t')
-    # Remove random white spaces
-    word_freq.Word = word_freq.Word.str.strip()
-    # Set as lower case
-    word_freq.Word = word_freq.Word.str.lower()
-    # Words sometimes appear twice, get the most frequent one
-    word_freq.drop_duplicates('Word',keep='first',inplace=True)
-    
-    return word_freq
-
-def get_log(start,nrows):
-    if nrows > 2000000:
-        raise Exception('Too large')
-    
-    else:
-        log = pd.read_csv('./data/log_data_ready.csv',
-                        nrows=nrows,
-                        usecols = [1,5,6,8,11,12,15,16,17],
-                        header=None,
-                        skiprows=start,
-                        encoding = "ISO-8859-1",
-                        sep='\t')
-    
-    # Set header
-    log.columns = [
-        'ts_id',
-        'key',
-        'text_field',
-        'timestamp',
-        'input_len',
-        'lev_dist',
-        'swype',
-        'predict',
-        'autocorr'
-    ]
-    
+def get_log(path, process = True, filtering = True, infer_ite = True):
+    log = pd.read_csv(path)
+    if process:
+        log = get_participants_for_log(log)
+        log = log_process(log)
+    if filtering or infer_ite:
+        log = mark_entries(log)
+    if filtering:
+        log = filter_log(log)
+    if infer_ite:
+        log = infer_ite_no_swype(log)
+        log = infer_sub_strategy(log)
     return log
 
 
