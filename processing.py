@@ -453,8 +453,8 @@ def log_to_words(log):
         'ts_id',
         'entry_id'
     ])
-    words['iki_norm'] = groupby.iki.sum()
-    words.iki_norm /= words.word_length
+    words['iki'] = groupby.iki.sum()
+    words.iki /= words.word_length
 
     # Only letter keystrokes
     mask = (log.len_diff == 1) & (log.is_forward)
@@ -464,7 +464,18 @@ def log_to_words(log):
         'ts_id',
         'entry_id'
     ])
-    words['iki_natural'] = groupby.iki.mean()
+    words['iki_letters'] = groupby.iki.mean()
+    
+    # Letter keystrokes AND ite time
+    mask = (log.len_diff == 1) & (log.is_forward) & (log.ite == 'none')
+    mask &= (log.key.str.contains('[a-z]')) & (log.key.shift(1).str.contains('[a-z]'))
+    mask |= (log.entry_id >= 0) & (log.ite != 'none')
+    groupby = log.loc[mask].groupby([
+        'participant_id',
+        'ts_id',
+        'entry_id'
+    ])
+    words['iki_letters_and_ite'] = groupby.iki.mean()
 
 
     # Only ite keystrokes
