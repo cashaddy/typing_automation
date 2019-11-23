@@ -1,0 +1,1241 @@
+P3
+IP: 130.233.84.127
+reported typing method: autocorrect
+Start time: 16:00
+End time:16:13
+Comments: In the first sentence autocorrect changed the second word to a wrong one and the participant later corrected it.
+Typing methods: prediction, autocorrect, swype
+Sentence 1: Arkansas called in 32 extra state police to the prison.
+Arkansas:000
+called:010
+in:000
+32:000
+extra:000
+state:000
+police:000
+to:000
+the:000
+prison:000
+Sentence 2: We all know that it does exist.
+We:000
+all:000
+know:000
+that:000
+it:000
+does:000
+exist:000
+Sentence 3: Disney was great and I've been to eight baseball games.
+Disney:100
+was:000
+great:000
+and:000
+I've:100
+been:000
+to:000
+eight:000
+baseball:000
+games:000
+Sentence 4: I wouldn't worry about coming in today.
+I:000
+wouldn't:100
+worry:000
+about:100
+coming:100
+in:000
+today:000
+Sentence 5: She would hate to see us not get our expense reports paid.
+She:000
+would:000
+hate:000
+to:000
+see:000
+us:000
+not:000
+get:000
+our:000
+expense:100 (predict for expens, then added e)
+reports:000
+paid:000
+Sentence 6: The accord was due to have come into effect overnight.
+The:000
+accord:100
+was:000
+due:000
+to:000
+have:000
+come:000
+into:000
+effect:000
+overnight:000
+Sentence 7: He pleaded guilty in February under an agreement with the government.
+He:000
+pleaded:010
+guilty:100 
+in:000
+February:100
+under:
+an:000
+agreement:100
+with:000
+the:000
+government:100
+Sentence 8: New switches can also be added to the Paging System.
+New:000
+switches:000
+can:000
+also:000
+be:000
+added:000
+to:000
+the:000
+Paging:100
+System:000
+Sentence 9: He said he saw no damage to the airport.
+He:000
+said:000
+he:000
+saw:000
+no:000
+damage:000
+to:000
+the:000
+airport:000
+Sentence 10: Toomer has been inconsistent this season.
+Toomer:010
+has:000
+been:000
+inconsistent:100
+this:000
+season:000
+Sentence 11: What is the mood?
+What:000
+is:000
+the:000
+mood:000
+Sentence 12: Out of office but have people working on info.
+Out:000
+of:000
+office:000
+but:000
+have:000
+people:000
+working:100
+on:000
+info:000
+Sentence 13: Sounds good to me.
+Sounds:000
+good:000
+to:000
+me:000
+Sentence 14: I am monitoring email.
+I:000
+am:000
+monitoring:000
+email:000
+Sentence 15: I am almost speechless.
+I:000
+am:000
+almost:010
+speechless:000
+
+P4
+IP: 188.238.97.52
+reported typing method: nothing
+Start time: 8:05
+End time: 8:27
+Comments: The participant had not any advanced typing tools available.
+Typing methods: prediction, autocorrect, swype
+Sentence 1: Please leave it to Brian.
+Please:000
+leave:000
+it:000
+to:000
+Brian:000
+Sentence 2:  Hope all is well.
+Hope: 000
+all:000
+is:000
+well:000
+Sentence 3: She chipped in from 69 feet for a birdie at 17.
+She:000
+chipped:000
+in:000
+from:000
+69:000
+feet:000
+for:000
+a:000
+birdie:000
+at:000
+17:000
+Sentence 4: You know that I love you.
+You:000
+know:000
+that:000
+I:000
+love:000
+you:000
+Sentence 5: What is the stock price doing?
+What:000
+is:000
+the:000
+stock:000
+price:000
+doing:000
+Sentence 6: Is she done yet?
+Is:000
+she:000
+done:000
+yet:000
+Sentence 7: I'll email her later tonight.
+I'll:000
+email:000
+her:000
+later:000
+today:000
+Sentence 8: Isn't that about the way it could happen?
+Isn't:000
+that:000
+about:000
+the:000
+way:000
+it:000
+could:000
+happen:000
+Sentence 9: Not even in yet.
+Not:000
+even:000
+in:000
+yet:000
+Sentence 10: There will be some better news later today.
+There:000
+will:000
+be:000
+some:000
+better:000
+news:000
+later:000
+today:000
+Sentence 11: I think these will be just fine.
+I:000
+think:000
+these:000
+will:000
+be:000
+just:000
+fine:000
+Sentence 12: I have the option of starting Jim Miller or picking up Chris Weinke.
+I:
+have:
+the:
+option:
+of:
+starting:
+Jim:
+Miller:
+or:
+picking:
+up:
+Chris:
+Weinke:
+Sentence 13: I need your home cell or whatever.
+I:000
+need:000
+your:000
+home:000
+cell:000
+or:000
+whatever:000
+Sentence 14: Avoid starting either back in Week 10 if at all possible.
+Avoid:000
+starting:000
+either:000
+back:000
+in:000
+Week:000
+10:000
+if:000
+at:000
+all:000
+possible:000
+Sentence 15: Opening on the back nine she birdied the 11th and bogeyed the next.
+Opening:000
+on:000
+the:000
+back:000
+nine:000
+she:000
+birdied:000
+the:000
+11th:000
+and:000
+bogeyed:000
+the:000
+next:000
+
+
+P6
+IP: 85.76.96.108
+reported typing method: autocorrect
+Start time: 11:20
+End time:
+Comments: There might have been some predictions/autocorrect that doesn't automatically change the word but proposes an alternative. Marked with a star(*).
+Typing methods: prediction, autocorrect, swype
+Sentence 1: Thanks so much for the message.
+Thanks:000
+so:000
+much:000
+for:010*
+the:000
+message:000
+Sentence 2: I can be there within the hour.
+I:000
+can:000
+be:000
+there:000
+within:000
+the:000
+hour:000
+Sentence 3: Why do you ask?
+Why:000
+do:000
+you:000
+ask:000
+Sentence 4: The move is also against out law.
+The:000
+move:000
+is:000
+also:000
+against:010*
+our:000
+law:000
+Sentence 5: Others voting against represented the defense ministry.
+Others:000
+voting:000
+against:000
+represented:000
+the:000
+defense:000
+ministry:000
+Sentence 6: How did you make sure it was the right set?
+How:000
+did:000
+you:000
+make:000
+sure:000
+it:000
+was:000
+the:000
+right:010
+set:000
+Sentence 7: As soon as anyone does that they can get nailed.
+As:000
+soon:000
+as:000
+anyone:000
+does:000
+that:000
+they:000
+can:000
+get:000
+nailed:010*
+Sentence 8: I appreciate you moving so quickly on this.
+I:000
+appreciate:000
+you:000
+moving:000
+on:000
+so:000
+quickly:000 
+on:000
+this:000
+Sentence 9: I guess the next time I'll see you is for Super Bowl.
+I:000
+guess:000
+the:000
+next:000
+time:000
+I'll:000
+see:000
+you:000
+is:000
+for:000
+Super:000
+Bowl:000
+Sentence 10: Did you differ from me?
+Did:000
+you:000
+differ:010*
+from:000
+me:000
+Sentence 11: Do you need to be there?
+Do:000
+you:000
+need:000
+to:000
+be:000
+there:000
+Sentence 12: He is expected to play in Sunday's game and is listed as probable. 
+He:000
+is:000
+expected:010*
+to:
+play:000
+in:000
+Sunday's:000
+game:000
+and:000
+is:000
+listed:000
+as:000
+probable:010
+Sentence 13: Good luck this week, I can't see any sure things out there.
+Good:000
+luck:000
+this:000
+week:000
+I:000
+can't:010
+see:000
+any:000
+sure:000
+things:010
+out:000
+there:000
+Sentence 14: The Senate should approve a 14-year-old treaty.
+The:000
+Senate: 000
+should:000
+approve:000
+a:000
+14-year-old:000
+treaty:000
+Sentence 15: He said he was not aware he suffered from it.
+He:000
+said:000
+he:000
+was:000
+not:000
+aware:000
+he:000
+suffered:010*
+from:000
+it:000
+ 
+P10:
+IP: 86.50.146.141
+reported tping method: swype
+Start time: 13:28
+End time: 13:47
+Comments: Instead of swype the participant used a swipe to type input on android
+*(character corrected after swype input)
+Typing methods: prediction, autocorrect, swype
+Sentence 1: San Francisco was Interconnect meeting.
+San:001
+Francisco:001
+was:001
+Interconnect:001*
+meeting:001
+Sentence 2: The Spanish federation has brought forward those fixtures.
+The:001
+Spanish:001
+federation:001
+has:001
+brought:001*
+forward:001
+those:001
+fixtures:001
+Sentence 3: Wayne has not done much yet, so don't put him in your Fantasy lineup.
+Wayne:001
+has:001*
+not:001
+done:001
+much:001
+yet:001
+so:001
+don't:001
+put:001
+him:001
+in:001
+your:001
+Fantasy:001*
+lineup:001
+Sentence 4: It was possible to a large extent to agree on some kind of approach.
+It:001
+was:001
+possible:001
+to:001
+a:000
+large:001
+extent:001
+to:001
+agree:001
+on:001
+some:001
+kind:001
+of:001
+approach:001
+Sentence 5: The dollar lost ground against the major currencies.
+The:001
+dollar:001
+lost:001*
+ground:001
+against:001
+the:001
+major:001
+currencies:001
+Sentence 6: Russian foreign ministry sources said a ceasefire accord was agreed.
+Russian:001
+foreign:001
+ministry:001
+sources:001
+said:001
+a:000
+ceasefire:001
+accord:001
+was:001
+agreed:001
+Sentence 7: Emerson Fittipaldi has never had an engine this good. 
+Emerson:001
+Fittipaldi:000
+has:001*
+never:001
+had:001
+an:001
+engine:001
+this:001
+good:001
+Sentence 8: You are welcome in Palacios this weekend, of course.
+You:001
+are:001
+welcome:001
+in:001
+Palacios:000
+this:001
+weekend:001
+of:001
+course:001
+Sentence 9: Mike is putting pressure on me.
+Mike:001
+is:001
+putting:001
+pressure:001
+on:001
+me:001
+Sentence 10: Man I don't want to get sick again.
+Man:001
+I:000
+don't:001
+want:001
+to:001
+get:001
+sick:001
+again:001
+Sentence 11: About 20 was Americans, but there were also Dutch and Swiss.
+About:001
+20:000
+was:001
+Americans:001
+but:000
+there:001
+were:001
+also:001
+Dutch:001
+and:001
+Swiss:001
+Sentence 12: I'll take them one at a time.
+I'll:001
+take:001
+them:001
+one:001
+at:001
+a:001
+time:001
+Sentence 13: I will not take the meeting at 1 PM.
+I:000
+will:000
+not:001
+take:001
+the:001
+meeting:001
+at:001
+1:000
+PM:001
+Sentence 14: Until we can answer these questions, we cannot terminate anything.
+Until:001
+we:001
+can:001
+answer:001
+these:001
+questions:001
+we:001
+cannot:001
+terminate:001
+anything:001
+Sentence 15: When do we review with El Paso?
+When:001
+do:001
+we:001
+review:001
+with:001
+El:000
+Paso:000  
+
+P11:
+IP: 85.76.75.192
+reported typing method: prediction
+Start time: 17:00
+End time:17:20
+Comments: The participant did not have any other typing methods available than a standard keyboard.
+Typing methods: prediction, autocorrect, swype
+Sentence 1: Others voting against represented the defense ministry.
+Others:000
+voting:000
+against:000
+represented:000
+the:000
+defense:000
+ministry:000
+Sentence 2: Hope this message is much better received than yesterday's.
+Hope:000
+this:000
+message:000
+is:000
+much:000
+better:000
+received:000
+than:000
+yesterday's:000
+Sentence 3: Just don't start him against the stifling Ravens defense this week.
+Just:000
+don't:000
+start:000
+him:000
+agaist:000
+the:000
+stifling:000
+Ravens:000
+defense:000
+this:000
+week:000
+Sentence 4: What is happening to the stock price?
+What:000
+is:000
+happening:000
+to:000
+the:000
+stock:000
+price:000
+Sentence 5: Are you back in town?
+Are:000
+you:000
+back:000
+in:000
+town:000
+Sentence 6: I'll call you in the morning.
+I'll:000
+call:000
+you:000
+in:000
+the:000
+morning:000
+Sentence 7: I know you changed it.
+I:000
+know:000
+you:000
+changed:000
+it:000
+Sentence 8: I didn't expect them to hand over the sites.
+I:000
+didn't:000
+expect:000
+them:000
+to:000
+hand:000
+over:000
+the:000
+sites:000
+Sentence 9: I agreed terms with Greg.
+I:000
+agreed:000
+terms:000
+with:000
+Greg:000
+Sentence 10: He was playing only his third event on the European Tour.
+He:000
+was:000
+playing:000
+only:000
+his:000
+third:000
+event:000
+on:000
+the:000
+European:000
+Tour:000
+Sentence 11: I am staying at a hotel.
+I:000
+am:000
+staying:000
+at:000
+a:000
+hotel:000
+Sentence 12: I'll ask, he just came by.
+I'll:000
+ask:000
+he:000
+just:000
+came:000
+by:000
+Sentence 13: Through this account cash flows to corporate.
+Through:000
+this:000
+account:000
+cash:000
+flows:000
+to:000
+corporate:000
+Sentence 14: We're not adversarial in this, but we want to know what's going on.	
+We're:000
+not:000
+adversarial:000
+in:000
+this:000
+but:000
+we:000
+want:000
+to:000
+know:000
+what's:000
+going:000
+on:000
+Sentence 15: Samantha would need around-the-clock care.
+Samantha:000
+would:000
+need:000
+around-the-clock:000
+care:000
+
+P12
+IP: 85.76.102.162
+reported tping method: swype
+start time: 14:00
+end time: 14:15
+Comments: The sentences marked with a star (*) were typed with swype + prediction
+Typing methods: prediction, autocorrect, swype
+Sentence 1: Winning here, everybody was more shocked and surprised.
+Winning:001*
+here:000
+everybody:001
+was:001
+more:001
+shocked:001
+and:001
+surprised:001
+Sentence 2: They are specifically concerned about the intercompany notes.
+They:001
+are:001
+specifically:001
+concerned:001
+about:001
+the:001
+intercompany:001
+notes:001
+Sentence 3: Let me know if you need anything else.
+Let:001
+me:001
+know:001
+if:001
+you:001
+need:001
+anything:001
+else:001
+Sentence 4: The evacuees included babies and young children.
+The:001
+evacuees:001
+included:001
+babies:001
+and:001
+young:001
+children:001
+Sentence 5: What number should he call you on?
+What:001
+number:001
+should:001
+he:001
+call:001
+you:001
+on:001
+Sentence 6: It doesn't match your spreadsheet.
+It:001
+doesn't:001
+match:001
+your:001
+spreadsheet:001
+Sentence 7: As soon as anyone does that they can get nailed.
+As:001
+soon:001
+as:001
+anyone:001
+does:001
+that:001
+they:001
+can:001
+get:001
+nailed:001
+Sentence 8: You'll receive the brand new Palm OS v4.
+You'll:001
+receive:001
+the:001
+brand:001
+new:001
+Palm:001
+OS:000
+v4:000
+Sentence 9: I know he's working on it.
+I:000
+know:001
+he's:001
+working:001
+on:001
+it:001
+Sentence 10: I know you changed it.
+I:000
+know:001
+you:001
+changed:001
+it:001
+Sentence 11: Mochrie remained steady in the face of the upheaval.
+Mochrie:000
+remained:001
+steady:001*
+in:001
+the:001
+face:001
+of:001
+the:001
+upheaval:001
+Sentence 12: He is expected to miss six weeks of action due to the procedure.
+He:001
+is:001
+expected:001
+to:001
+miss:001
+six:001
+weeks:001
+of:001
+action:001
+due:001
+to:001
+the:001
+procedure:001
+Sentence 13: Send me your address.
+Send:001
+me:001
+your:001
+address:001
+Sentence 14: We need a process to deal with this. 
+We:001
+need:001
+a:000
+process:001
+to:001
+deal:001
+with:001
+this:001
+Sentence 15: I'm fully recovered and back on pace.
+I'm:001
+fully:001
+recovered:001
+and:001
+back:001
+on:001
+pace:001
+
+P13
+IP: 192.130.252.24
+reported tping method: swype
+start time: 9:45
+end time: 10:00
+Comments: The sentences marked with a star (*) were typed with swype + prediction
+Typing methods: prediction, autocorrect, swype
+Sentence 1: He was professor emeritus of human development and psychiatry.
+He:001
+was:001
+professor:001
+emeritus:000
+of:001
+human:001
+development:001
+and:001
+psychiatry:001
+Sentence 2: See what concerts we have for you in your city. 
+See:001
+what:001
+concerts:001
+we:001
+have:001
+for:001
+you:001
+in:001
+your:001
+city:001
+Sentence 3: How can we get these answers?
+How:001
+can:001
+we:001
+get:001
+these:001
+answers:001
+Sentence 4: I am too, and we are working very hard to turn it around.
+I:000
+am:001
+too:001
+and:001
+we:001
+are:001
+working:001
+very:001
+hard:001
+to:001
+turn:001
+it:001*
+around:001
+Sentence 5: Currently, we are focusing our resources on domestic sites.
+Currently:001
+we:001
+are:001
+focusing:001
+our:001*
+resources:001
+on:001
+domestic:001
+sites:001*
+Sentence 6: No obligation to pay.
+No:001
+obligation:001
+to:001
+pay:001
+Sentence 7: Bob, I'll take Denver to Win.
+Bob:001*
+I'll:001
+take:001
+Denver:001
+to:001
+Win:000
+Sentence 8: It's going to be a tough weekend.
+It's:001
+going:001
+to:001
+be:001
+a:000
+tough:001
+weekend:001
+Sentence 9: Try it again and let me know.
+Try:001
+it:001
+again:001
+and:001
+let:001
+me:001
+know:001
+Sentence 10: Clinton attended the US college basketball finals.
+Clinton:001
+attended:001
+the:001
+US:000
+college:001
+basketball:001
+finals:001
+Sentence 11: Jan, sorry for the inconvenience.
+Jan:001*
+sorry:001
+for:001
+the:001
+inconvenience:001
+Sentence 12: What is in the plan?
+What:001
+is:001
+in:001
+the:001
+plan:001
+Sentence 13: Bob, I'll pick San Diego as my winner.
+Bob:001
+I'll:001
+pick:001
+San:001
+Diego:001
+as:001
+my:001
+winner:001
+Sentence 14: The team mate says were not interested at this point.
+The:001
+team:001
+mate:001
+says:001
+were:001*
+not:001
+interested:001
+at:001
+this:001
+point:001
+Sentence 15: Very foggy this morning.
+Very:001
+foggy:001
+this:001
+morning:001
+       
+P14
+IP: 86.50.147.23
+reported tping method: prediction/autocorrect
+start time: 11:04
+end time: 11:20
+Comments: The participant mentioned that it was harder to type than usual because the cursor was not visible during writing. 
+Additionally, the autocapitalization did not work which made typing harder.
+Typing methods: prediction, autocorrect, swype
+Sentence 1: I am on my way.
+I:000
+am:000
+on:000
+my:000
+way:000
+Sentence 2: I wish he would leave Deerfield alone.
+I:100
+wish:000
+he:000
+would:010
+leave:100
+Deerfield:100
+alone:000
+Sentence 3: His current status is day to day.
+His:000
+current:000
+status:000
+is:000
+day:000
+to:010
+day:000
+Sentence 4: See what concerts we have for you in your city.
+See:000
+what:000
+concerts:000
+we:000
+have:000
+for:000
+you:000
+in:000
+your:000
+city:100
+Sentence 5: What are the units?
+What:000
+are:000
+the:000
+units:000
+Sentence 6: It's not looking too good is it?
+It's:100
+not:000
+looking:000
+too:010
+good:000
+is:000
+it:000
+Sentence 7: In his last years he had been living at the nursing home.
+In:000
+his:000
+last:000
+years:010
+he:000
+had:000
+been:010
+living:000
+at:000
+the:000
+nursing:100
+home:000
+Sentence 8: Valerie, I should have Greeley on Monday for August.   
+Valerie:000
+I:000
+should:010
+have:Greeley:010
+on:000
+Monday:000
+for:000
+August:000
+Sentence 9: Yes I am coming twice.
+Yes:000
+I:000
+am:000
+coming:100
+twice:010
+Sentence 10: Can you get with Mary and make sure? 
+Can:000
+you:000
+get:000
+with:000
+Mary:000
+and:000
+make:000
+sure:000
+Sentence 11: One of his accomplices secured a safe landing.
+One:000
+of:000
+his:000
+accomplices:000
+secured:000
+a:000
+safe:010
+landing:010
+Sentence 12: We're working with the speedway.
+We're:000
+working:100
+with:000
+the:000
+speedway:100
+Sentence 13: Sorry for the delay.
+Sorry:000
+for:010
+the:000
+delay:000
+Sentence 14: I have other things to worry about!
+I:000
+have:000
+other:000
+things:000
+to:000
+worry:000
+about:000
+Sentence 15: Has Brian had his contract yet?
+Has:000
+Brian:000
+had:000
+his:000
+contract:000
+yet:010
+
+P15
+IP:86.50.146.232
+reported tping method: prediction
+start time: 16:30
+end time:16:48
+Comments:
+Typing methods: prediction, autocorrect, swype
+Sentence 1: I'm pleased with my speeds.
+I'm:100
+pleased:000
+with:000
+my:000
+speeds:000
+Sentence 2: They must not be distributed without our consent.
+They:000
+must:000
+not:000
+be:000
+distributed:100
+without:100
+our:000
+consent:100
+Sentence 3: You can reply via email.
+You:100
+can:100
+reply:100
+via:100
+email:100
+Sentence 4: However, he's no better than waiver wire fodder in Fantasy Football.
+However:100
+he's:100
+no:100
+better:100
+than:100
+waiver:100
+wire:000
+fodder:100
+in:000
+Fantasy:100
+Football:100
+Sentence 5: I would assume this week sometime.
+I:000
+would:100
+assume:100
+this:100
+week:100
+sometime:100
+Sentence 6: I doubt that it is forecasted.
+I:000
+doubt:100
+that:000
+it:000
+is:000
+forecasted:100 (last two characters in normal typing)
+Sentence 7: Thanks for your leadership on this issue.
+Thanks:100
+for:100
+your:100
+leadership:100
+on:000
+this:100
+issue:100
+Sentence 8: I am fine with this.
+I:100
+am:100
+fine:100
+with:100
+this:100
+Sentence 9: Please call me if you see any problems.
+Please:100
+call:100
+me:100
+if:100
+you:100
+see:100
+any:100
+problems:100
+Sentence 10: You have 15 active players.
+You:100
+have:100
+15:000
+active:100
+players:100
+Sentence 11: Please give me a call.
+Please:100
+give:100
+me:100
+a:100
+call:100
+Sentence 12: Apparently, BP is using the correct pricing.
+Apparently:100
+BP:000
+is:000
+using:100
+the:000
+correct:100
+pricing:100
+Sentence 13: I will not be available.
+I:000
+will:100
+not:100
+be:100
+available:100
+Sentence 14: Could you please let me know as soon as possible.
+Could:100
+you:100
+please:100
+let:100
+me:100
+know:100
+as:100
+soon:100
+as:100
+possible:100
+Sentence 15: The same price was offered for the arrest of Abdul Razak Memon.
+The:000
+same:100
+price:100
+was:000
+offered:100
+for:000
+the:000
+arrest:100
+of:000
+Abdul:000
+Razak:000
+Memon:000

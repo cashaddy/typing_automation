@@ -1,0 +1,1302 @@
+ts_id: 1626925
+Arkansas:000
+called:010
+in:000
+32:000
+extra:000
+state:000
+police:000
+to:000
+the:000
+prison:000
+
+ts_id: 1626932
+We:000
+all:000
+know:000
+that:000
+it:000
+does:000
+exist:000
+
+ts_id: 1626934
+Disney:100
+was:000
+great:000
+and:000
+I've:100
+been:000
+to:000
+eight:000
+baseball:000
+games:000
+
+ts_id: 1626939
+I:000
+wouldn't:100
+worry:000
+about:100
+coming:100
+in:000
+today:000
+
+ts_id: 1626944
+She:000
+would:000
+hate:000
+to:000
+see:000
+us:000
+not:000
+get:000
+our:000
+expense:100
+reports:000
+paid:000
+
+ts_id: 1626947
+The:000
+accord:100
+was:000
+due:000
+to:000
+have:000
+come:000
+into:000
+effect:000
+overnight:000
+
+ts_id: 1626952
+He:000
+pleaded:010
+guilty:100
+in:000
+February:100
+under:
+an:000
+agreement:100
+with:000
+the:000
+government:100
+
+ts_id: 1626958
+New:000
+switches:000
+can:000
+also:000
+be:000
+added:000
+to:000
+the:000
+Paging:100
+System:000
+
+ts_id: 1626965
+He:000
+said:000
+he:000
+saw:000
+no:000
+damage:000
+to:000
+the:000
+airport:000
+
+ts_id: 1626969
+Toomer:010
+has:000
+been:000
+inconsistent:100
+this:000
+season:000
+
+ts_id: 1626975
+What:000
+is:000
+the:000
+mood:000
+
+ts_id: 1626979
+Out:000
+of:000
+office:000
+but:000
+have:000
+people:000
+working:100
+on:000
+info:000
+
+ts_id: 1626984
+Sounds:000
+good:000
+to:000
+me:000
+
+ts_id: 1626986
+I:000
+am:000
+monitoring:000
+email:000
+
+ts_id: 1626988
+I:000
+am:000
+almost:010
+speechless:000
+
+ts_id: 1644258
+Please:000
+leave:000
+it:000
+to:000
+Brian:000
+
+ts_id: 1644270
+Hope:000
+all:000
+is:000
+well:000
+
+ts_id: 1644271
+She:000
+chipped:000
+in:000
+from:000
+69:000
+feet:000
+for:000
+a:000
+birdie:000
+at:000
+17:000
+
+ts_id: 1644277
+You:000
+know:000
+that:000
+I:000
+love:000
+you:000
+
+ts_id: 1644280
+What:000
+is:000
+the:000
+stock:000
+price:000
+doing:000
+
+ts_id: 1644287
+Is:000
+she:000
+done:000
+yet:000
+
+ts_id: 1644290
+I'll:000
+email:000
+her:000
+later:000
+today:000
+
+ts_id: 1644295
+Isn't:000
+that:000
+about:000
+the:000
+way:000
+it:000
+could:000
+happen:000
+
+ts_id: 1644301
+Not:000
+even:000
+in:000
+yet:000
+
+ts_id: 1644304
+There:000
+will:000
+be:000
+some:000
+better:000
+news:000
+later:000
+today:000
+
+ts_id: 1644315
+I:000
+think:000
+these:000
+will:000
+be:000
+just:000
+fine:000
+
+ts_id: 1644318
+I:
+have:
+the:
+option:
+of:
+starting:
+Jim:
+Miller:
+or:
+picking:
+up:
+Chris:
+Weinke:
+
+ts_id: 1644330
+I:000
+need:000
+your:000
+home:000
+cell:000
+or:000
+whatever:000
+
+ts_id: 1644336
+Avoid:000
+starting:000
+either:000
+back:000
+in:000
+Week:000
+10:000
+if:000
+at:000
+all:000
+possible:000
+
+ts_id: 1644346
+Opening:000
+on:000
+the:000
+back:000
+nine:000
+she:000
+birdied:000
+the:000
+11th:000
+and:000
+bogeyed:000
+the:000
+next:000
+
+ts_id: 1647647
+Thanks:000
+so:000
+much:000
+for:010*
+the:000
+message:000
+
+ts_id: 1647652
+I:000
+can:000
+be:000
+there:000
+within:000
+the:000
+hour:000
+
+ts_id: 1647656
+Why:000
+do:000
+you:000
+ask:000
+
+ts_id: 1647659 
+The:000
+move:000
+is:000
+also:000
+against:010*
+our:000
+law:000
+
+ts_id: 1647665
+Others:000
+voting:000
+against:000
+represented:000
+the:000
+defense:000
+ministry:000
+
+ts_id: 1647671
+How:000
+did:000
+you:000
+make:000
+sure:000
+it:000
+was:000
+the:000
+right:010
+set:000
+
+ts_id: 1647675
+As:000
+soon:000
+as:000
+anyone:000
+does:000
+that:000
+they:000
+can:000
+get:000
+nailed:010*
+
+ts_id: 1647681
+I:000
+appreciate:000
+you:000
+moving:000
+on:000
+so:000
+quickly:000 
+on:000
+this:000
+
+ts_id: 1647684
+I:000
+guess:000
+the:000
+next:000
+time:000
+I'll:000
+see:000
+you:000
+is:000
+for:000
+Super:000
+Bowl:000
+
+ts_id: 1647690
+Did:000
+you:000
+differ:010*
+from:000
+me:000
+
+ts_id: 1647694
+Do:000
+you:000
+need:000
+to:000
+be:000
+there:000
+
+ts_id: 1647697
+He:000
+is:000
+expected:010*
+to:
+play:000
+in:000
+Sunday's:000
+game:000
+and:000
+is:000
+listed:000
+as:000
+probable:010
+
+ts_id: 1647709
+Good:000
+luck:000
+this:000
+week:000
+I:000
+can't:010
+see:000
+any:000
+sure:000
+things:010
+out:000
+there:000
+
+ts_id: 1647718
+The:000
+Senate:000
+should:000
+approve:000
+a:000
+14-year-old:000
+treaty:000
+
+ts_id: 1647727
+He:000
+said:000
+he:000
+was:000
+not:000
+aware:000
+he:000
+suffered:010*
+from:000
+it:000
+
+ts_id: 1715720
+San:001
+Francisco:001
+was:001
+Interconnect:001*
+meeting:001
+
+ts_id: 1715726
+The:001
+Spanish:001
+federation:001
+has:001
+brought:001*
+forward:001
+those:001
+fixtures:001
+
+ts_id: 1715732
+Wayne:001
+has:001*
+not:001
+done:001
+much:001
+yet:001
+so:001
+don't:001
+put:001
+him:001
+in:001
+your:001
+Fantasy:101
+lineup:001
+
+ts_id: 1715738
+It:001
+was:001
+possible:001
+to:001
+a:000
+large:001
+extent:001
+to:001
+agree:001
+on:001
+some:001
+kind:001
+of:001
+approach:001
+
+ts_id: 1715740
+The:001
+dollar:001
+lost:101
+ground:001
+against:001
+the:001
+major:001
+currencies:001
+
+ts_id: 1715743
+Russian:001
+foreign:001
+ministry:001
+sources:001
+said:001
+a:000
+ceasefire:001
+accord:001
+was:001
+agreed:001
+
+ts_id: 1715746
+Emerson:001
+Fittipaldi:000
+has:101
+never:001
+had:001
+an:001
+engine:001
+this:001
+good:001
+
+ts_id: 1715749
+You:001
+are:001
+welcome:001
+in:001
+Palacios:000
+this:001
+weekend:001
+of:001
+course:001
+
+ts_id: 1715752
+Mike:001
+is:001
+putting:001
+pressure:001
+on:001
+me:001
+
+ts_id: 1715753
+Man:001
+I:000
+don't:001
+want:001
+to:001
+get:001
+sick:001
+again:001
+
+ts_id: 1715755
+About:001
+20:000
+was:001
+Americans:001
+but:000
+there:001
+were:001
+also:001
+Dutch:001
+and:001
+Swiss:001
+
+ts_id: 1715757
+I'll:001
+take:001
+them:001
+one:001
+at:001
+a:001
+time:001
+
+ts_id: 1715761
+I:000
+will:000
+not:001
+take:001
+the:001
+meeting:001
+at:001
+1:000
+PM:001
+
+ts_id: 1715762
+Until:001
+we:001
+can:001
+answer:001
+these:001
+questions:001
+we:001
+cannot:001
+terminate:001
+anything:001
+
+ts_id: 1715764
+When:001
+do:001
+we:001
+review:001
+with:001
+El:000
+Paso:000  
+
+ts_id: 1718251
+Others:000
+voting:000
+against:000
+represented:000
+the:000
+defense:000
+ministry:000
+
+ts_id: 1718260
+Hope:000
+this:000
+message:000
+is:000
+much:000
+better:000
+received:000
+than:000
+yesterday's:000
+
+ts_id: 1718269
+Just:000
+don't:000
+start:000
+him:000
+agaist:000
+the:000
+stifling:000
+Ravens:000
+defense:000
+this:000
+week:000
+
+ts_id: 1718286
+What:000
+is:000
+happening:000
+to:000
+the:000
+stock:000
+price:000
+
+ts_id: 1718297
+Are:000
+you:000
+back:000
+in:000
+town:000
+
+ts_id: 1718307
+I'll:000
+call:000
+you:000
+in:000
+the:000
+morning:000
+
+ts_id: 1718317
+I:000
+know:000
+you:000
+changed:000
+it:000
+
+ts_id: 1718326
+I:000
+didn't:000
+expect:000
+them:000
+to:000
+hand:000
+over:000
+the:000
+sites:000
+
+ts_id: 1718340
+I:000
+agreed:000
+terms:000
+with:000
+Greg:000
+
+ts_id: 1718351
+He:000
+was:000
+playing:000
+only:000
+his:000
+third:000
+event:000
+on:000
+the:000
+European:000
+Tour:000
+
+ts_id: 1718374
+I:000
+am:000
+staying:000
+at:000
+a:000
+hotel:000
+
+ts_id: 1718385
+I'll:000
+ask:000
+he:000
+just:000
+came:000
+by:000
+
+ts_id: 1718395
+Through:000
+this:000
+account:000
+cash:000
+flows:000
+to:000
+corporate:000
+
+ts_id: 1718410
+We're:000
+not:000
+adversarial:000
+in:000
+this:000
+but:000
+we:000
+want:000
+to:000
+know:000
+what's:000
+going:000
+on:000
+
+ts_id: 1718441
+Samantha:000
+would:000
+need:000
+around-the-clock:000
+care:000
+
+ts_id: 1735910
+Winning:101
+here:000
+everybody:001
+was:001
+more:001
+shocked:001
+and:001
+surprised:001
+
+ts_id: 1735919
+They:001
+are:001
+specifically:001
+concerned:001
+about:001
+the:001
+intercompany:001
+notes:001
+
+ts_id: 1735925
+Let:001
+me:001
+know:001
+if:001
+you:001
+need:001
+anything:001
+else:001
+
+ts_id: 1735929
+The:001
+evacuees:001
+included:001
+babies:001
+and:001
+young:001
+children:001
+
+ts_id: 1735933
+What:001
+number:001
+should:001
+he:001
+call:001
+you:001
+on:001
+
+ts_id: 1735937
+It:001
+doesn't:001
+match:001
+your:001
+spreadsheet:001
+
+ts_id: 1735939
+As:001
+soon:001
+as:001
+anyone:001
+does:001
+that:001
+they:001
+can:001
+get:001
+nailed:001
+
+ts_id: 1735944
+You'll:001
+receive:001
+the:001
+brand:001
+new:001
+Palm:001
+OS:000
+v4:000
+
+ts_id: 1735951
+I:000
+know:001
+he's:001
+working:001
+on:001
+it:001
+
+ts_id: 1735953
+I:000
+know:001
+you:001
+changed:001
+it:001
+
+ts_id: 1735957
+Mochrie:000
+remained:001
+steady:101
+in:001
+the:001
+face:001
+of:001
+the:001
+upheaval:001
+
+ts_id: 1735964
+He:001
+is:001
+expected:001
+to:001
+miss:001
+six:001
+weeks:001
+of:001
+action:001
+due:001
+to:001
+the:001
+procedure:001
+
+ts_id: 1735971
+Send:001
+me:001
+your:001
+address:001
+
+ts_id: 1735973
+We:001
+need:001
+a:000
+process:001
+to:001
+deal:001
+with:001
+this:001
+
+ts_id: 1735976
+I'm:001
+fully:001
+recovered:001
+and:001
+back:001
+on:001
+pace:001
+
+ts_id: 1752143
+He:001
+was:001
+professor:001
+emeritus:000
+of:001
+human:001
+development:001
+and:001
+psychiatry:001
+
+ts_id: 1752153
+See:001
+what:001
+concerts:001
+we:001
+have:001
+for:001
+you:001
+in:001
+your:001
+city:001
+
+ts_id: 1752156
+How:001
+can:001
+we:001
+get:001
+these:001
+answers:001
+
+ts_id: 1752158
+I:000
+am:001
+too:001
+and:001
+we:001
+are:001
+working:001
+very:001
+hard:001
+to:001
+turn:001
+it:101
+around:001
+
+ts_id: 1752162
+Currently:001
+we:001
+are:001
+focusing:001
+our:101
+resources:001
+on:001
+domestic:001
+sites:101
+
+ts_id: 1752167
+No:001
+obligation:001
+to:001
+pay:001
+
+ts_id: 1752169
+Bob:101
+I'll:001
+take:001
+Denver:001
+to:001
+Win:000
+
+ts_id: 1752172
+It's:001
+going:001
+to:001
+be:001
+a:000
+tough:001
+weekend:001
+
+ts_id: 1752176
+Try:001
+it:001
+again:001
+and:001
+let:001
+me:001
+know:001
+
+ts_id: 1752179
+Clinton:001
+attended:001
+the:001
+US:000
+college:001
+basketball:001
+finals:001
+
+ts_id: 1752184
+Jan:101
+sorry:001
+for:001
+the:001
+inconvenience:001
+
+ts_id: 1752188
+What:001
+is:001
+in:001
+the:001
+plan:001
+
+ts_id: 1752191
+Bob:001
+I'll:001
+pick:001
+San:001
+Diego:001
+as:001
+my:001
+winner:001
+
+ts_id: 1752195
+The:001
+team:001
+mate:001
+says:001
+were:101
+not:001
+interested:001
+at:001
+this:001
+point:001
+
+ts_id: 1752199
+Very:001
+foggy:001
+this:001
+morning:001
+
+ts_id: 1753196
+I:000
+am:000
+on:000
+my:000
+way:000
+
+ts_id: 1753203
+I:100
+wish:000
+he:000
+would:010
+leave:100
+Deerfield:100
+alone:000
+
+ts_id: 1753210
+His:000
+current:000
+status:000
+is:000
+day:000
+to:010
+day:000
+
+ts_id: 1753214
+See:000
+what:000
+concerts:000
+we:000
+have:000
+for:000
+you:000
+in:000
+your:000
+city:100
+
+ts_id: 1753219
+What:000
+are:000
+the:000
+units:000
+
+ts_id: 1753224
+It's:100
+not:000
+looking:000
+too:010
+good:000
+is:000
+it:000
+
+ts_id: 1753227
+In:000
+his:000
+last:000
+years:010
+he:000
+had:000
+been:010
+living:000
+at:000
+the:000
+nursing:100
+home:000
+
+ts_id: 1753238
+Valerie:000
+I:000
+should:010
+have:
+Greeley:010
+on:000
+Monday:000
+for:000
+August:000
+
+ts_id: 1753251
+Yes:000
+I:000
+am:000
+coming:100
+twice:010
+
+ts_id: 1753257
+Can:000
+you:000
+get:000
+with:000
+Mary:000
+and:000
+make:000
+sure:000
+
+ts_id: 1753258
+One:000
+of:000
+his:000
+accomplices:000
+secured:000
+a:000
+safe:010
+landing:010
+
+ts_id: 1753262
+We're:000
+working:100
+with:000
+the:000
+speedway:100
+
+ts_id: 1753266
+Sorry:000
+for:010
+the:000
+delay:000
+
+ts_id: 1753267
+I:000
+have:000
+other:000
+things:000
+to:000
+worry:000
+about:000
+
+ts_id: 1753269
+Has:000
+Brian:000
+had:000
+his:000
+contract:000
+yet:010
+
+ts_id: 1753354
+I'm:100
+pleased:000
+with:000
+my:000
+speeds:000
+
+ts_id: 1753359
+They:000
+must:000
+not:000
+be:000
+distributed:100
+without:100
+our:000
+consent:100
+
+ts_id: 1753368
+You:100
+can:100
+reply:100
+via:100
+email:100
+
+ts_id: 1753371
+However:100
+he's:100
+no:100
+better:100
+than:100
+waiver:100
+wire:000
+fodder:100
+in:000
+Fantasy:100
+Football:100
+
+ts_id: 1753382
+I:000
+would:100
+assume:100
+this:100
+week:100
+sometime:100
+
+ts_id: 1753389
+I:000
+doubt:100
+that:000
+it:000
+is:000
+forecasted:100
+
+ts_id: 1753396
+Thanks:100
+for:100
+your:100
+leadership:100
+on:000
+this:100
+issue:100
+
+ts_id: 1753403
+I:100
+am:100
+fine:100
+with:100
+this:100
+
+ts_id: 1753407
+Please:100
+call:100
+me:100
+if:100
+you:100
+see:100
+any:100
+problems:100
+
+ts_id: 1753411
+You:100
+have:100
+15:000
+active:100
+players:100
+
+ts_id: 1753414
+Please:100
+give:100
+me:100
+a:100
+call:100
+
+ts_id: 1753418
+Apparently:100
+BP:000
+is:000
+using:100
+the:000
+correct:100
+pricing:100
+
+ts_id: 1753424
+I:000
+will:100
+not:100
+be:100
+available:100
+
+ts_id: 1753427
+Could:100
+you:100
+please:100
+let:100
+me:100
+know:100
+as:100
+soon:100
+as:100
+possible:100
+
+ts_id: 1753430
+The:000
+same:100
+price:100
+was:000
+offered:100
+for:000
+the:000
+arrest:100
+of:000
+Abdul:000
+Razak:000
+Memon:000
