@@ -1,6 +1,7 @@
-# README
+# Intelligent mobile keyboards
+We analyze a dataset of tens of thousands of mobile users in order to discover and solve issues with mobile keyboards.
 
-## Data processing
+## Data processing steps
 1. Download data from Palin et al.
 1. Rename the tables by running *rename_tables.sql*
 1. Mark invalid test sections by running *mark_invalid.sql*
