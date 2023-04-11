@@ -1,4 +1,4 @@
 RENAME TABLE
-    valid_input_logdata_reordered TO log,
-    first_15_test_sections TO test_sections,
-    valid_participants TO participants
+    open_input_logdata TO log,
+    open_test_sections TO test_sections,
+    open_participants TO participants

@@ -10,6 +10,7 @@ if __name__ == "__main__":
     log = pd.read_csv(args.path,sep='\t')
 
     print('Changing columns names...')
+
     log.columns = [
         'ts_id',
         'key',

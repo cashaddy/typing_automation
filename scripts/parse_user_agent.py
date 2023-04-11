@@ -16,11 +16,11 @@ if __name__ == "__main__":
     participants = pd.read_csv(args.path, sep='\t')
 
     print('Parsing user agent (this may take a few minutes)...')
-    participants['browser'] = participants.USER_AGENT.apply(lambda x:  user_agent_parser.ParseUserAgent(x)['family'])
-    participants['os'] = participants.USER_AGENT.apply(lambda x:  user_agent_parser.ParseOS(x)['family'])
-    participants['device_family'] = participants.USER_AGENT.apply(lambda x:  user_agent_parser.ParseDevice(x)['family'])
-    participants['device_brand'] = participants.USER_AGENT.apply(lambda x:  user_agent_parser.ParseDevice(x)['brand'])
-    participants['device_model'] = participants.USER_AGENT.apply(lambda x:  user_agent_parser.ParseDevice(x)['model'])
+    participants['browser'] = participants.BROWSER.apply(lambda x:  user_agent_parser.ParseUserAgent(x)['family'])
+    participants['os'] = participants.BROWSER.apply(lambda x:  user_agent_parser.ParseOS(x)['family'])
+    participants['device_family'] = participants.BROWSER.apply(lambda x:  user_agent_parser.ParseDevice(x)['family'])
+    participants['device_brand'] = participants.BROWSER.apply(lambda x:  user_agent_parser.ParseDevice(x)['brand'])
+    participants['device_model'] = participants.BROWSER.apply(lambda x:  user_agent_parser.ParseDevice(x)['model'])
 
     print('Saving to participants.csv...')
     participants.to_csv(args.path,sep='\t',index=False)

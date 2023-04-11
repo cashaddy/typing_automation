@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  typing-automation-mysql:
+    container_name: typing-automation-mysql
+    image: mysql:8
+    ports:
+      - "3666:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    logging:
+      driver: syslog
+      options:
+        tag: "{{.DaemonName}}(image={{.ImageName}};name={{.Name}};id={{.ID}})"
+    restart: on-failure
+    volumes:
+     - ${PWD}/mysql:/var/lib/mysql
+    network_mode: bridge
