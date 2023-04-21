@@ -2,8 +2,6 @@
 Select the log representing 10000 random participants which have only valid test sections.
 */
 
-/* renamed ite_auto_new, ite_pred_new, ite_swyp_new */
-
 CREATE TABLE IF NOT EXISTS log_sample
 SELECT l.TEST_SECTION_ID,l.DATA,l.INPUT_LEN,l.INPUT_LDIST,l.ITE_AUTO,l.ITE_PRED,l.ITE_SWYP,l.INPUT,l.TIMESTAMP FROM log l
 INNER JOIN

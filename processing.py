@@ -175,7 +175,22 @@ def get_participants_for_log(log):
     log.rename(columns={'PARTICIPANT_ID':'participant_id'},inplace=True)
     
     return log
-    
+
+def get_demographics_for_log(log):
+    p = get_participants()
+    log = pd.merge(log, p[['PARTICIPANT_ID', 'AGE', 'GENDER', 'os']], left_on='participant_id',
+                   right_on='PARTICIPANT_ID')
+    log.drop('PARTICIPANT_ID', axis=1, inplace=True)
+    log.rename(columns={'AGE': 'age', 'GENDER': 'gender'}, inplace=True)
+
+    return log
+
+def demographic_stats(log):
+    log_demographics = log[['participant_id', 'age', 'gender', 'os']]
+    log_demographics = log_demographics.drop_duplicates(subset=['participant_id'])
+    log_demographics.describe(include='all')
+    return log_demographics
+
 def calculate_iki(log):
     return log.groupby('ts_id').timestamp.diff()
 
@@ -290,7 +305,7 @@ def filter_log(log):
     log['tmp'] = mask
     # Find participants who have a large percentage of these 0-LD, multichar entries
     participants_multichar = log.groupby('participant_id').tmp.value_counts().unstack()[True].fillna(0)
-    participants_multichar /= log.groupby(['participant_id','ts_id']).entry_id.nunique().sum(level=0)
+    participants_multichar /= log.groupby(['participant_id','ts_id']).entry_id.nunique().groupby(level=0).sum()
     participants_multichar = participants_multichar.loc[participants_multichar > 0.2].index
     # Remove them
     log = log.loc[~log.participant_id.isin(participants_multichar)].copy()

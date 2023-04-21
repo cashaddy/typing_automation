@@ -1,5 +1,4 @@
-/* Check and mark the validity of the test sections a */
-
+/* Check and mark the validity of the test sections */
 ALTER TABLE test_sections ADD COLUMN is_valid bool DEFAULT 1, ALGORITHM=INSTANT;
 
 /* Mark test sections with undefined keys as invalid */
